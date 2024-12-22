@@ -1,36 +1,132 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+## Documentação do Projeto: Aplicativo de Receitas com IA
 
-## Getting Started
+### **1. Visão Geral**
+O **Aplicativo de Receitas com IA** é uma plataforma interativa que combina inteligência artificial e culinária. O objetivo é ajudar os usuários a criar receitas personalizadas com base nos ingredientes disponíveis, considerando preferências alimentares, restrições e histórico de uso.
 
-First, run the development server:
+### **2. Funcionalidades Principais**
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+#### **2.1. Entrada de Ingredientes**
+- Métodos de entrada:
+  - Digitação manual.
+  - Reconhecimento de texto em imagens (OCR).
+  - Comando de voz.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+#### **2.2. Sugestão de Receitas Personalizadas**
+- Gera receitas completas com base nos ingredientes listados.
+- Permite ajuste de filtros, como:
+  - Tipo de prato (entrada, prato principal, sobremesa).
+  - Dietas específicas (vegano, sem glúten, low carb).
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+#### **2.3. Recomendações Baseadas em Preferências**
+- Sistema aprende as preferências do usuário com base em:
+  - Receitas salvas como favoritas.
+  - Avaliações de receitas.
+  - Restrições alimentares registradas.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+#### **2.4. Modo de Preparo Detalhado**
+- Apresenta instruções passo a passo.
+- Inclui timers integrados para etapas que requerem tempo específico.
+- Sugere substituições de ingredientes para adaptar a receita.
 
-## Learn More
+#### **2.5. Lista de Compras Inteligente**
+- Identifica ingredientes que faltam para receitas desejadas.
+- Gera uma lista de compras com opção de ordenação por categorias.
 
-To learn more about Next.js, take a look at the following resources:
+#### **2.6. Salvamento e Compartilhamento**
+- Permite salvar receitas favoritas.
+- Compartilha receitas via redes sociais ou links.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+#### **2.7. Avaliação e Feedback**
+- Usuários avaliam receitas para refinar futuras sugestões.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+### **3. Arquitetura do Sistema**
 
-## Deploy on Vercel
+#### **3.1. Tecnologias Utilizadas**
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+##### **Frontend**
+- **Framework**: React ou Svelte.
+- **Estilização**: Tailwind CSS ou Material UI.
+- **Funcionalidades Adicionais**:
+  - Responsividade.
+  - Progressive Web App (PWA).
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+##### **Backend**
+- **Servidor**: Node.js ou Django.
+- **Banco de Dados**: MongoDB ou PostgreSQL.
+- **Autenticação**: Firebase Authentication.
+
+##### **Inteligência Artificial**
+- **Modelo de NLP**:
+  - OpenAI API (ChatGPT) ou Hugging Face para geração de receitas dinâmicas.
+- **Reconhecimento de Texto**:
+  - Tesseract.js ou Google Vision API.
+
+##### **APIs Externas**
+- Spoonacular API para base de dados de receitas.
+- Google Maps API para sugestões de lojas ou mercados próximos.
+
+##### **Plataforma**
+- Progressive Web App (PWA) para funcionalidade offline e instalação em dispositivos móveis.
+
+#### **3.2. Fluxo de Dados**
+1. Usuário insere ingredientes.
+2. Backend consulta APIs externas e modelos de IA.
+3. Receitas são geradas e enviadas ao frontend.
+4. Usuário avalia ou ajusta a receita.
+5. Feedback é armazenado no banco de dados para melhorar o aprendizado.
+
+### **4. Fluxo do Usuário**
+
+1. **Entrada de Ingredientes**
+   - O usuário lista ingredientes por texto, voz ou imagem.
+   - Sistema valida e categoriza os itens.
+
+2. **Sugestão de Receita**
+   - IA sugere receitas completas com base nos dados fornecidos.
+   - Usuário pode ajustar preferências e filtros.
+
+3. **Execução da Receita**
+   - Apresenta etapas detalhadas do preparo.
+   - Notificações para etapas críticas (ex.: tempo de forno).
+
+4. **Feedback**
+   - Usuário avalia a receita e dá feedback.
+   - Sistema aprende com as avaliações para sugerir melhores opções futuras.
+
+### **5. Diferenciais do Projeto**
+
+1. **Personalização Avançada**
+   - IA aprende com histórico de uso e preferências individuais.
+
+2. **Integração com IoT**
+   - Suporte para dispositivos inteligentes como Google Home e Alexa.
+
+3. **Funcionalidade Offline**
+   - Permite acesso a receitas salvas mesmo sem conexão.
+
+4. **Gamificação**
+   - Desafios semanais de culinária com recompensas virtuais.
+
+### **6. Roadmap do Projeto**
+
+#### **6.1. Fase 1: MVP (Produto Mínimo Viável)**
+- Funcionalidades:
+  - Entrada de ingredientes.
+  - Sugestão básica de receitas.
+  - Interface responsiva.
+
+#### **6.2. Fase 2: Funcionalidades Avançadas**
+- Personalização de receitas.
+- Integração com APIs externas.
+- Lista de compras inteligente.
+
+#### **6.3. Fase 3: Lânçamento Completo**
+- Feedback do usuário.
+- Suporte a multiplataforma (PWA, Android, iOS).
+- Expansão para novos idiomas.
+
+### **7. Considerações Finais**
+O projeto **Aplicativo de Receitas com IA** tem potencial para transformar a experiência culinária dos usuários, trazendo praticidade e inovação ao dia a dia. Com um foco em personalização e tecnologia, ele se destaca como uma solução moderna e eficiente.
+
+Gostaria de mais detalhes ou ajuda com a implementação inicial?
+
