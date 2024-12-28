@@ -1,14 +1,17 @@
-import Image from "next/image";
-import Header from "./components/Header";
-import Hero from "./components/Hero";
-import Footer from "./components/Footer";
+'use client'
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import Home from './home/page';
+import CulinaryChat from './culinaryChat/page';
 
-export default function Home() {
+function App() {
   return (
-    <div className="bg-gray-800 h-screen w-full">
-      <Header />
-      <Hero />
-      <Footer />
-    </div>
+    <Router>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/culinaryChat" element={<CulinaryChat />} />
+      </Routes>
+    </Router>
   );
 }
+
+export default App;
