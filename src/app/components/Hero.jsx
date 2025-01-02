@@ -6,7 +6,7 @@ export default function Hero() {
   const navigate = useNavigate();
 
   const handleClick = () => {
-    navigate('/culinaryChat');
+    navigate('/personalSetup');
   };
 
   return (
@@ -28,7 +28,7 @@ export default function Hero() {
 
       <section className="mt-12 text-center">
         <h2 className="text-2xl font-bold">Pronto para criar sua próxima receita?</h2>
-        <button onClick={handleClick} className="mt-4 bg-purple-600 hover:bg-purple-700 text-white font-medium py-2 px-4 rounded">Comece Agora</button>
+        <button onClick={handleClick} className="mt-4 bg-blue-600 hover:bg-blue-700 text-white font-medium py-2 px-4 rounded">Comece Agora</button>
       </section>
     </main>
   )
