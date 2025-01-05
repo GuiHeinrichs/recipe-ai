@@ -3,19 +3,34 @@ import React, { useState } from 'react';
 import { TagsInput } from './TagSelect';
 import CheckboxCards from './CheckboxCards';
 import RestrictionsCards from './RestrictionsCards';
+import useRecipeStore from '../stores/recipeDataStore';
+import { useRouter } from 'next/navigation'
 
 export default function HeroSetup() {
+    const router = useRouter();
     const [ingredients, setIngredients] = useState([]);
     const [preferences, setPreferences] = useState({
-        'vegetariano-option': false,
-        'vegano-option': false,
-        'sem-opcoes-option': false
+        'vegetariano': false,
+        'vegano': false,
+        'sem-opcoes': false
     });
     const [restrictions, setRestrictions] = useState([]);
+    const { setRecipeData } = useRecipeStore();
 
     const handleChangePreferences = (data) => {
         setPreferences(data);
         console.log(preferences);
+    };
+
+    const handleChangeIngredients = (data) => {
+        setIngredients(data);
+        console.log(ingredients);
+    };
+
+    const handleSearch = () => {
+        const recipeData = { ingredients, preferences, restrictions };
+        setRecipeData(recipeData); // Salva os dados na store
+        router.push("/culinaryChat");
     };
 
     return (
@@ -25,7 +40,7 @@ export default function HeroSetup() {
                 <TagsInput
                     name="ingredients"
                     value={ingredients}
-                    onChange={setIngredients}
+                    onChange={handleChangeIngredients}
                     placeHolder="Adicione seus ingredientes"
                     className="w-full max-w-md"
                 />
@@ -51,7 +66,7 @@ export default function HeroSetup() {
             </div>
             {
                 ingredients.length > 0 || preferences['vegetariano-option'] || preferences['vegano-option'] || preferences['sem-opcoes-option'] || restrictions.length ? (
-                    <button className='bg-blue-500 text-white px-4 py-2 rounded-md hover:bg-blue-600'>
+                    <button className='bg-blue-500 text-white px-4 py-2 rounded-md hover:bg-blue-600' onClick={handleSearch}>
                         Buscar 
                     </button>
                 ) : null
