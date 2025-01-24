@@ -21,7 +21,11 @@ export default function CheckboxCards({ title, description, checked, handleCheck
                         checked={checked["vegetariano"]}
                         onChange={() => handleChange("vegetariano")}
                     />
-                    <label htmlFor="vegetariano" className="inline-flex items-center justify-between w-full p-5 text-gray-500 bg-white border-2 border-gray-200 rounded-lg cursor-pointer dark:hover:text-gray-300 dark:border-gray-700 peer-checked:border-blue-600 hover:text-gray-600 dark:peer-checked:text-gray-300 peer-checked:text-gray-600 hover:bg-gray-50 dark:text-gray-400 dark:bg-gray-800 dark:hover:bg-gray-700">
+                    <label htmlFor="vegetariano" className="inline-flex items-center justify-between
+                     w-full p-5 text-gray-500 bg-white border-2 border-neutral-800 rounded-lg cursor-pointer 
+                     dark:hover:text-gray-300 dark:border-neutral-800 peer-checked:border-blue-600 
+                     hover:text-gray-600 dark:peer-checked:text-gray-300 peer-checked:text-gray-600 
+                     hover:bg-[#1e1e1e] dark:text-gray-400 dark:bg-[#1e1e1e] dark:hover:border-neutral-800">
                         <div className="block">
                             <FaLeaf className="mb-2 text-green-400 w-7 h-7" />
                             <div className="w-full text-lg font-semibold">Vegetariano</div>
@@ -37,7 +41,7 @@ export default function CheckboxCards({ title, description, checked, handleCheck
                         checked={checked["vegano"]}
                         onChange={() => handleChange("vegano")}
                     />
-                    <label htmlFor="vegano" className="inline-flex items-center justify-between w-full p-5 text-gray-500 bg-white border-2 border-gray-200 rounded-lg cursor-pointer dark:hover:text-gray-300 dark:border-gray-700 peer-checked:border-blue-600 hover:text-gray-600 dark:peer-checked:text-gray-300 peer-checked:text-gray-600 hover:bg-gray-50 dark:text-gray-400 dark:bg-gray-800 dark:hover:bg-gray-700">
+                    <label htmlFor="vegano" className="inline-flex items-center justify-between w-full p-5 text-gray-500 bg-white border-2 border-neutral-800 rounded-lg cursor-pointer dark:hover:text-gray-300 dark:border-neutral-800 peer-checked:border-blue-600 hover:text-gray-600 dark:peer-checked:text-gray-300 peer-checked:text-gray-600 hover:bg-gray-50 dark:text-gray-400 dark:bg-[#1e1e1e] dark:hover:bg-[#1e1e1e]">
                         <div className="block">
                             <LuVegan className="mb-2 text-green-400 w-7 h-7" />
                             <div className="w-full text-lg font-semibold">Vegano</div>
@@ -53,7 +57,7 @@ export default function CheckboxCards({ title, description, checked, handleCheck
                         checked={checked["sem-opcoes"]}
                         onChange={() => handleChange("sem-opcoes")}
                     />
-                    <label htmlFor="sem-opcoes" className="inline-flex items-center justify-between w-full p-5 text-gray-500 bg-white border-2 border-gray-200 rounded-lg cursor-pointer dark:hover:text-gray-300 dark:border-gray-700 peer-checked:border-blue-600 hover:text-gray-600 dark:peer-checked:text-gray-300 peer-checked:text-gray-600 hover:bg-gray-50 dark:text-gray-400 dark:bg-gray-800 dark:hover:bg-gray-700">
+                    <label htmlFor="sem-opcoes" className="inline-flex items-center justify-between w-full p-5 text-gray-500 bg-white border-2 border-neutral-800 rounded-lg cursor-pointer dark:hover:text-gray-300 dark:border-neutral-800 peer-checked:border-blue-600 hover:text-gray-600 dark:peer-checked:text-gray-300 peer-checked:text-gray-600 hover:bg-gray-50 dark:text-gray-400 dark:bg-[#1e1e1e] dark:hover:bg-[#1e1e1e]">
                         <div className="block">
                             <LuBeef className="mb-2 text-red-500 w-7 h-7" />
                             <div className="w-full text-lg font-semibold">Nenhuma das opções</div>

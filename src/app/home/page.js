@@ -4,7 +4,7 @@ import Footer from "../components/Footer";
 
 export default function Home() {
   return (
-    <div className="bg-gray-800 h-screen w-full">
+    <div className="bg-background h-screen w-full">
       <Header />
       <Hero />
       <Footer />

@@ -112,7 +112,7 @@ const TagsInput = ({
 	return (
 		<div
 			aria-labelledby={name}
-			className=' flex flex-wrap w-1/2 items-center gap-2 rounded-md border border-neutral-800 bg-gray-900 p-2 px-3 py-2 text-sm 
+			className=' flex flex-wrap w-1/2 items-center gap-2 rounded-md border border-neutral-800 bg-[#1e1e1e] p-2 px-3 py-2 text-sm 
 			ring-offset-neutral-950 focus-within:outline-none focus-within:ring-2 focus-within:ring-ring focus-within:ring-offset-2'
 		>
 			{tags.map((tag) => (
