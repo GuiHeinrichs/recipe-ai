@@ -1,16 +1,10 @@
 'use client'
 import React from 'react'
-import { useNavigate } from 'react-router-dom';
+import Link from 'next/link';
 
 export default function Hero() {
-  const navigate = useNavigate();
-
-  const handleClick = () => {
-    navigate('/personalSetup');
-  };
-
   return (
-    <main className="bg-background flex flex-col justify-center px-6 py-40">
+    <main className="bg-background flex flex-col justify-center px-6 py-12 md:py-40">
       <section className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
         <div className="bg-[#1e1e1e] p-6 rounded-lg shadow-md cursor-pointer">
           <h2 className="text-xl font-semibold">Entrada de ingredientes e preferências alimentares</h2>
@@ -26,9 +20,9 @@ export default function Hero() {
         </div>
       </section>
 
-      <section className="mt-12 text-center">
-        <h2 className="text-2xl font-bold">Pronto para criar sua próxima receita?</h2>
-        <button onClick={handleClick} className="mt-4 bg-blue-600 hover:bg-blue-700 text-white font-medium py-2 px-4 rounded">Comece Agora</button>
+      <section className="md:mt-12 mt-10 text-center">
+        <h2 className="text-2xl font-bold mb-6">Pronto para criar sua próxima receita?</h2>
+        <Link href="/personalSetup" className=" bg-blue-600 hover:bg-blue-700 text-white font-medium py-2 px-4 rounded">Comece Agora</Link>
       </section>
     </main>
   )

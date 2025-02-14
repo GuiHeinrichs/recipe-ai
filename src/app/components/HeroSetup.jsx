@@ -1,6 +1,5 @@
 'use client';
 import React, { useState } from 'react';
-import useMouse from "@react-hook/mouse-position";
 import CheckboxCards from './CheckboxCards';
 import RestrictionsCards from './RestrictionsCards';
 import useRecipeStore from '../stores/recipeDataStore';
@@ -8,6 +7,7 @@ import { useRouter } from 'next/navigation';
 import { GiCook } from "react-icons/gi";
 import { TagsInput } from './TagSelect';
 import { motion } from "framer-motion";
+import Header from './Header';
 
 export default function HeroSetup() {
     const router = useRouter();
@@ -21,9 +21,6 @@ export default function HeroSetup() {
         'sem-gluten': false,
         'sem-lactose': false
     }]);
-
-    const [cursorText, setCursorText] = useState("");
-    const [cursorVariant, setCursorVariant] = useState("default");
 
     const { setRecipeData } = useRecipeStore();
 
@@ -51,60 +48,17 @@ export default function HeroSetup() {
             restrictions['sem-gluten'] || restrictions['sem-lactose'];
     };
 
-    const ref = React.useRef(null);
-    const mouse = useMouse(ref, {
-        enterDelay: 100,
-        leaveDelay: 100
-    });
-
-    let mouseXPosition = 0;
-    let mouseYPosition = 0;
-
-    if (mouse.x !== null) {
-        mouseXPosition = mouse.clientX;
-    }
-
-    if (mouse.y !== null) {
-        mouseYPosition = mouse.clientY;
-    }
-
-    const variants = {
-        contact: {
-            opacity: 1,
-            backgroundColor: "transparent",
-            color: "#FFFFFF",
-            height: 20,
-            width: 200,
-            fontSize: "1rem",
-        }
-    };
-
-    const spring = {
-        type: "spring",
-        stiffness: 500,
-        damping: 28
-    };
-
-    function contactEnter() {
-        setCursorText("Gerar receita");
-        setCursorVariant("contact");
-    }
-
-    function contactLeave() {
-        setCursorText("");
-        setCursorVariant("default");
-    }
-
     return (
-        <div className='h-screen w-full flex flex-col items-center justify-center space-y-8 px-10 bg-background' ref={ref}>
-            <div className='w-full flex flex-col items-center justify-center space-y-3 px-10 text-sm bg-background'>
+        <div className='flex flex-col items-center justify-center space-y-8 md:px-10 bg-background'>
+            <Header ShowBurger={true} />
+            <div className='w-full flex flex-col items-center justify-center space-y-3 md:px-10 text-sm bg-background'>
                 <p className="text-xl">Ingredientes disponíveis</p>
                 <TagsInput
                     name="ingredients"
                     value={ingredients}
                     onChange={handleChangeIngredients}
                     placeHolder="Adicione seus ingredientes"
-                    className="w-full max-w-md"
+                    className="w-full max-w-xl md:max-w-md"
                 />
                 <p className='text-xs text-gray-400'>Digite o ingrediente e aperte Enter/Tab</p>
             </div>
@@ -128,16 +82,14 @@ export default function HeroSetup() {
             </div>
             {
                 anyValueEntered() && (
-
                     <motion.div
+                        className='pb-8'
                         initial={{ opacity: 0, scale: 0.5 }}
                         animate={{ opacity: 1, scale: 1 }}
                         transition={{
                             duration: 0.5,
                             ease: [0, 0.71, 0.2, 1.01],
                         }}
-                        onMouseEnter={contactEnter}
-                        onMouseLeave={contactLeave}
                     >
                         <button
                             className='flex justify-center gap-x-1 bg-blue-500 text-white px-16 py-3 rounded-md hover:bg-blue-600'
@@ -145,14 +97,6 @@ export default function HeroSetup() {
                         >
                             <GiCook className='text-2xl' />
                         </button>
-                        <motion.div
-                            variants={variants}
-                            className="fixed flex justify-end mt-4 text-white text-[1rem]"
-                            animate={cursorVariant}
-                            transition={spring}
-                        >
-                            <span className="flex pointer-events-none">{cursorText}</span>
-                        </motion.div>
                     </motion.div>
                 )
             }

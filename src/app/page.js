@@ -1,19 +1,13 @@
-'use client'
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import Home from './home/page';
-import CulinaryChat from './culinaryChat/page';
-import PersonalSetup from './personalSetup/page';
+import Header from "./components/Header";
+import Hero from "./components/Hero";
+import Footer from "./components/Footer";
 
-function App() {
+export default function Home() {
   return (
-    <Router>
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/culinaryChat" element={<CulinaryChat />} />
-        <Route path="/personalSetup" element={<PersonalSetup />} />
-      </Routes>
-    </Router>
+    <div className="bg-background h-screen w-full">
+      <Header />
+      <Hero />
+      <Footer />
+    </div>
   );
 }
-
-export default App;
