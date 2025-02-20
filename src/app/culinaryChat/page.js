@@ -8,14 +8,18 @@ import useRecipeStore from "../stores/recipeDataStore";
 import openAIQuestionFormat from "../utils/openAIQuestionFormat";
 import { motion, useInView } from "framer-motion";
 import { GiCook } from "react-icons/gi";
+import { newtonsCradle } from "ldrs";
 
 export default function CulinaryChat() {
   const { recipeData } = useRecipeStore();
   const [messages, setMessages] = useState("Resposta sendo gerada...");
+  const [isLoading, setLoading] = useState(false);
+
+  newtonsCradle.register();
 
   useEffect(() => {
     const questionBody = openAIQuestionFormat(recipeData);
-
+    setLoading(true);
     api.post("/api/ask", { question: questionBody })
       .then(response => {
         const { answer } = response.data;
@@ -24,6 +28,9 @@ export default function CulinaryChat() {
       .catch(error => {
         console.error("Erro na API:", error);
         setMessages("Erro ao carregar resposta.");
+      })
+      .finally(() => {
+        setLoading(false);
       });
   }, [recipeData]);
 
@@ -43,8 +50,13 @@ export default function CulinaryChat() {
 
   return (
     <div className="flex flex-col items-center h-screen w-screen bg-background">
-      <Header ShowBurger={true} className="py-0"/>
-      <div className="flex items-start mt-4 gap-2">
+      {!isLoading &&
+        <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
+          <l-newtons-cradle className="flex justify-center items-center h-full w-full absolute opacity-100" size="78" speed="1.4" color="gray" />
+        </div>
+      }
+      <Header ShowBurger={true} className="py-0" />
+      <div className={`flex items-start mt-4 gap-2`}>
         <div className="bg-gray-500 p-3 rounded-lg">
           <GiCook className="text-sm md:text-xl" />
         </div>

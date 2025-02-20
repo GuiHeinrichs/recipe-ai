@@ -55,8 +55,6 @@ export default function HeroSetup() {
         restrictions['sem-gluten'] || restrictions['sem-lactose'];
     };
     
-    leapfrog.register();
-    
     return (
         <div className='flex flex-col items-center justify-center space-y-8 md:px-10 bg-background'>
             <Header ShowBurger={true} />
