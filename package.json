@@ -6,7 +6,9 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "lintes": "eslint --fix .",
+    "format": "prettier --write ."
   },
   "dependencies": {
     "@react-hook/mouse-position": "^4.1.3",
