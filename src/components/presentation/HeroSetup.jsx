@@ -1,8 +1,8 @@
 import React from "react";
-import Header from "../layout/Header";
-import { TagsInput } from "../ui/TagSelect";
-import CheckboxCards from "../ui/CheckboxCards";
-import RestrictionsCards from "../ui/RestrictionsCards";
+import Header from "../../components/layout/Header";
+import { TagsInput } from "../../components/ui/TagSelect";
+import CheckboxCards from "../../components/ui/CheckboxCards";
+import RestrictionsCards from "../../components/ui/RestrictionsCards";
 import { GiCook } from "react-icons/gi";
 import { motion } from "framer-motion";
 

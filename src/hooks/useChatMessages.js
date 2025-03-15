@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
-import api from "../app/services/api";
-import openAIQuestionFormat from "../app/utils/openAIQuestionFormat";
+import api from "../lib/services/api";
+import openAIQuestionFormat from "../utils/openAIQuestionFormat";
 
 const useChatMessages = (recipeData) => {
   const [messages, setMessages] = useState(null);

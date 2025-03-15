@@ -1,6 +1,6 @@
 "use client";
 import React from "react";
-import useChatMessages from "../../../hooks/useChatMessages";
+import useChatMessages from "../../hooks/useChatMessages";
 import useRecipeStore from "../../stores/recipeDataStore";
 import Chat from "../../components/presentation/Chat";
 

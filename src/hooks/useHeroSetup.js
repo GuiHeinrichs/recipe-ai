@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { useRouter } from "next/navigation";
-import useRecipeStore from "../app/stores/recipeDataStore";
+import useRecipeStore from "../stores/recipeDataStore";
 
 const useHeroSetup = () => {
   const router = useRouter();

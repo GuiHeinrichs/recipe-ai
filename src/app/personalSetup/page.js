@@ -1,4 +1,4 @@
-import HeroSetup from "../components/containers/HeroSetupContainer";
+import HeroSetup from "../../components/containers/HeroSetupContainer";
 
 export default function PersonalSetup() {
   return (

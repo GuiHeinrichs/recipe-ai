@@ -1,6 +1,6 @@
 "use client";
-import useHeroSetup from "../../../hooks/useHeroSetup";
-import HeroSetup from "../presentation/HeroSetup";
+import useHeroSetup from "../../hooks/useHeroSetup";
+import HeroSetup from "../../components/presentation/HeroSetup";
 
 const HeroSetupContainer = () => {
   const {
