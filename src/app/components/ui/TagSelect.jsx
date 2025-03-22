@@ -19,7 +19,7 @@ function Tag({ text, remove, disabled, className }) {
   };
 
   return (
-    <span className="inline-flex items-center rounded bg-blue-600 px-2 py-2">
+    <span className="inline-flex items-center rounded bg-[#82b29a] px-2 py-2">
       <span>{text}</span>
       {!disabled && (
         <button

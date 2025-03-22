@@ -18,7 +18,7 @@ const HeroHome = ({ features }) => {
         <h2 className="text-2xl font-bold mb-6">Pronto para criar sua próxima receita?</h2>
         <Link
           href="/personalSetup"
-          className="bg-blue-600 hover:bg-blue-700 text-white font-medium py-2 px-4 rounded"
+          className="bg-[#289e63] hover:bg-[#82b29a] text-white font-medium py-2 px-4 rounded"
         >
           Comece Agora
         </Link>

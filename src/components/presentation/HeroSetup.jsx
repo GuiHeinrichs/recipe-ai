@@ -59,7 +59,7 @@ const HeroSetup = ({
           }}
         >
           <button
-            className="flex justify-center gap-x-1 bg-blue-500 text-white px-16 py-3 rounded-md hover:bg-blue-600"
+            className="flex justify-center gap-x-1 bg-[#82b29a] text-white px-16 py-3 rounded-md hover:bg-[#289e63]"
             onClick={handleSearch}
           >
             <GiCook className="text-2xl" />

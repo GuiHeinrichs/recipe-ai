@@ -8,13 +8,10 @@ const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <header className="md:py-6 py-4 w-full border-b border-blue-500 bg-background">
+    <header className="md:py-6 py-4 w-full border-b border-[#82b29a] bg-background">
       <div className="flex items-center justify-between md:justify-center px-4">
         {/* Botão de menu hambúrguer - visível apenas em telas menores que md */}
-        <button 
-          onClick={() => setIsOpen(!isOpen)} 
-          className="text-4xl md:hidden"
-        >
+        <button onClick={() => setIsOpen(!isOpen)} className="text-4xl md:hidden">
           {isOpen ? <AiOutlineClose /> : <RxHamburgerMenu />}
         </button>
 
@@ -40,23 +37,18 @@ const Header = () => {
           isOpen ? "translate-x-0" : "-translate-x-full"
         } transition-transform duration-300 ease-in-out md:hidden`}
       >
-        <button
-          onClick={() => setIsOpen(false)}
-          className="absolute top-4 right-4 text-2xl"
-        >
+        <button onClick={() => setIsOpen(false)} className="absolute top-4 right-4 text-2xl">
           <AiOutlineClose />
         </button>
         <nav className="flex flex-col justify-evenly h-full space-y-4 px-6">
           <div>
             <Link href="/" passHref>
-              <span className="block text-2xl font-semibold hover:text-blue-500">
-                Home
-              </span>
+              <span className="block text-2xl font-semibold hover:text-[#82b29a]">Home</span>
             </Link>
           </div>
           <div>
             <Link href="/personalSetup">
-              <span className="block text-2xl font-semibold hover:text-blue-500">
+              <span className="block text-2xl font-semibold hover:text-[#82b29a]">
                 Geração de nova receita
               </span>
             </Link>

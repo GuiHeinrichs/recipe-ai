@@ -11,10 +11,10 @@ const Chat = ({ messages, isLoading }) => {
   const isInView = useInView(ref, { once: true });
 
   return (
-    <div className="flex flex-col items-center h-screen w-screen bg-background p-6 overflow-x-hidden">
+    <div className="flex flex-col items-center h-screen w-screen bg-[#121212] p-6 overflow-x-hidden">
       {isLoading && (
         <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
-          <l-dot-wave size="78" speed="1.4" color="gray" />
+          <l-dot-wave size="78" speed="1.4" color="#82b29a" />
         </div>
       )}
 
@@ -22,7 +22,7 @@ const Chat = ({ messages, isLoading }) => {
 
       <motion.div
         ref={ref}
-        className="bg-neutral-900 mt-4 shadow-lg rounded-2xl p-6 border border-zinc-700 max-w-2xl md:max-w-7xl w-full opacity-0"
+        className="bg-[#1E1E1E] mt-4 shadow-xl rounded-2xl p-6 border border-[#2A2A2A] max-w-2xl md:max-w-7xl w-full opacity-0"
         initial={{ opacity: 0, y: 20 }}
         animate={isInView ? { opacity: 1, y: 0 } : {}}
         transition={{ duration: 0.5 }}
@@ -34,38 +34,42 @@ const Chat = ({ messages, isLoading }) => {
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6, delay: 0.2 }}
         >
-          <GiCook className="text-yellow-400 text-4xl" />
-          <h2 className="text-2xl font-bold text-slate-300">Receita Gerada</h2>
+          <GiCook className="text-[#82b29a] text-4xl" />
+          <h2 className="text-2xl font-bold text-[#82b29a]">Receita Gerada</h2>
         </motion.div>
 
         {/* Conteúdo Markdown formatado */}
         <ReactMarkdown
-          className="prose prose-blue max-w-none"
+          className="prose prose-invert max-w-none"
           components={{
             h2: ({ node, ...props }) => (
-              <h2 className="text-2xl font-bold text-slate-300 flex items-center gap-2">
+              <h2 className="text-2xl font-bold text-[#82b29a] flex items-center gap-2">
                 {props.children}
               </h2>
             ),
             h3: ({ node, ...props }) => (
-              <h3 className="text-xl font-semibold text-slate-400 flex items-center gap-2">
+              <h3 className="text-xl font-semibold text-[#a1c1b3] flex items-center gap-2">
                 {props.children}
               </h3>
             ),
             h4: ({ node, ...props }) => (
-              <h4 className="text-lg font-semibold text-slate-400 flex items-center gap-2">
+              <h4 className="text-lg font-semibold text-[#c1d8cd] flex items-center gap-2">
                 {props.children}
               </h4>
             ),
             ul: ({ node, ...props }) => (
-              <ul className="list-disc list-inside mt-2 text-slate-200">{props.children}</ul>
+              <ul className="list-disc list-inside mt-2 text-[#d1d5db] space-y-1">
+                {props.children}
+              </ul>
             ),
             ol: ({ node, ...props }) => (
-              <ol className="list-decimal list-inside mt-2 text-blue-400">{props.children}</ol>
+              <ol className="list-decimal list-inside mt-2 space-y-2 text-[#d1d5db] marker:text-[#F4A261]">
+                {props.children}
+              </ol>
             ),
             li: ({ node, ...props }) => (
               <motion.li
-                className="leading-relaxed"
+                className="leading-relaxed text-[#d1d5db] transition-colors duration-200"
                 initial={{ opacity: 0, x: -10 }}
                 animate={isInView ? { opacity: 1, x: 0 } : {}}
                 transition={{ delay: 0.1 }}
@@ -74,7 +78,7 @@ const Chat = ({ messages, isLoading }) => {
               </motion.li>
             ),
             p: ({ node, ...props }) => (
-              <p className="text-slate-200 leading-relaxed">{props.children}</p>
+              <p className="text-[#d1d5db] leading-relaxed">{props.children}</p>
             ),
           }}
         >
